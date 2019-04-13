@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Shop_ban_ca.Models.MAT_HANG>
+
+@*@{
+    Layout = null;
+}*@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index1</title>
+</head>
+<body>
+    @*<p>
+            @Html.ActionLink("Create New", "Create")
+        </p>*@
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TENMATHANG)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SOLUONG)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DONGIA)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TENMATHANG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SOLUONG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DONGIA)
+                </td>
+                @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { id=item.MAMATHANG }) |
+                        @Html.ActionLink("Details", "Details", new { id=item.MAMATHANG }) |
+                        @Html.ActionLink("Delete", "Delete", new { id=item.MAMATHANG })
+                    </td>*@
+            </tr>
+        }
+
+    </table>
+    <input type="button" onclick="location.href='http://google.com';" value="Trang chủ" />
+</body>
+</html>

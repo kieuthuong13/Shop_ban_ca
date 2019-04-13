@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Shop_ban_ca.Areas.Admin.Models.Admin>
+
+@{
+    ViewBag.Title = "Admin";
+}
+
+<p>
+    @Html.ActionLink("Tạo nhà cung cấp mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.mancc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tenncc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sdt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.diachi)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem => item.mancc)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.tenncc)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.sdt)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.diachi)
+            </th>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.mancc }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.mancc }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.mancc })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
